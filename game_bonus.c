@@ -6,7 +6,7 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:18:04 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:19:42 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:08:46 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	init_game(t_game *game, char **map)
 	game->mlx = mlx_init();
 	if (!game->mlx)
 	{
-		printf("Error: Failed to initialize MLX\n");
+		ft_printf("Error: Failed to initialize MLX\n");
 		exit(1);
 	}
 	init_images(game);

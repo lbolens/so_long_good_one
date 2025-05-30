@@ -6,7 +6,7 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 11:53:40 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 15:42:37 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:10:27 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	manage_conditions(t_game *game, char **map, int new_x, int new_y)
 	{
 		if (game->player.collected == game->map.total_collectibles)
 		{
-			printf("Victory!\n");
+			ft_printf("Victory!\n");
 			destroy_game(game);
 			exit(0);
 		}
@@ -84,6 +84,6 @@ int	key_handler(int keycode, t_game *game)
 	game->player.y = new_y;
 	map[new_y][new_x] = 'P';
 	game->player.moves++;
-	printf("Moves: %d\n", game->player.moves);
+	ft_printf("Moves: %d\n", game->player.moves);
 	return (0);
 }

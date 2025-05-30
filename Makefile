@@ -6,12 +6,22 @@
 #    By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/30 12:29:42 by lbolens           #+#    #+#              #
-#    Updated: 2025/05/30 15:42:21 by lbolens          ###   ########.fr        #
+#    Updated: 2025/05/30 16:07:48 by lbolens          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 NAME_BONUS = so_long_bonus
+
+FT_PRINTF = \
+	printf/ft_printf.c \
+	printf/ft_putchar_printf.c \
+	printf/ft_put_hex_up.c \
+	printf/ft_put_hex_low.c \
+	printf/ft_put_pointer.c \
+	printf/ft_put_unsigned_dec_10.c \
+	printf/ft_putnbr_printf.c \
+	printf/ft_putstr_printf.c
 
 SRC = game.c \
 	  get_next_line_utils.c \
@@ -32,7 +42,8 @@ SRC = game.c \
 	  utils_quater.c \
 	  utils_quinter.c \
 	  flood_fill.c \
-	  utils_sexies.c
+	  utils_sexies.c \
+	  $(FT_PRINTF)
 	  
 SRC_BONUS = destroy_bonus.c \
 			init_images_bonus.c \
@@ -57,7 +68,8 @@ SRC_BONUS = destroy_bonus.c \
 			init_asteroids_bonus.c \
 			main_bonus.c \
 			render_bonus.c \
-			utils_ter_bonus.c
+			utils_ter_bonus.c \
+			$(FT_PRINTF)
 			
 define ASCII_ART
 	@echo ""
@@ -89,7 +101,7 @@ OBJ := $(SRC:%.c=%.o)
 OBJ_BONUS := $(SRC_BONUS:%.c=%.o)
 
 CC = gcc
-CCFLAGS = -Wall -Wextra -Werror -Imlx
+CCFLAGS = -Wall -Wextra -Werror -Imlx -Iprintf
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Darwin)
@@ -117,21 +129,9 @@ bonus: $(OBJ_BONUS)
 	@$(CC) $(CCFLAGS) $(OBJ_BONUS) $(MLX_FLAGS) -o $(NAME_BONUS)
 	@echo "🎯 Build complete"
 	
-$(OBJ): %.o: %.c
-	@CURRENT=$$(echo "$(SRC)" | tr ' ' '\n' | nl -v 1 | awk -v f="$<" '$$2==f {print $$1}'); \
-	TOTAL=$$(echo "$(SRC)" | wc -w); \
-	PERCENT=$$((100 * $$CURRENT / $$TOTAL)); \
-	BAR_LEN=20; \
-	FILLED=$$((BAR_LEN * $$CURRENT / $$TOTAL)); \
-	EMPTY=$$((BAR_LEN - $$FILLED)); \
-	BAR=$$(printf "%*s" $$FILLED | tr ' ' '#'); \
-	SPACE=$$(printf "%*s" $$EMPTY); \
-	printf "\r[%s%s] %3d%% Compiling: %-20s" "$$BAR" "$$SPACE" "$$PERCENT" "$<"; \
-	$(CC) $(CCFLAGS) -c $< -o $@
-
-$(OBJ_BONUS): %.o: %.c
-	@CURRENT=$$(echo "$(SRC_BONUS)" | tr ' ' '\n' | nl -v 1 | awk -v f="$<" '$$2==f {print $$1}'); \
-	TOTAL=$$(echo "$(SRC_BONUS)" | wc -w); \
+%.o: %.c
+	@CURRENT=$$(echo "$(SRC) $(SRC_BONUS)" | tr ' ' '\n' | nl -v 1 | awk -v f="$<" 'BEGIN{n=0} $$2==f{n=$$1} END{print n}'); \
+	TOTAL=$$(echo "$(SRC) $(SRC_BONUS)" | wc -w); \
 	PERCENT=$$((100 * $$CURRENT / $$TOTAL)); \
 	BAR_LEN=20; \
 	FILLED=$$((BAR_LEN * $$CURRENT / $$TOTAL)); \

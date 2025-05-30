@@ -6,7 +6,7 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 16:49:58 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 15:42:11 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:13:14 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@
 # define KEY_RIGHT 124
 # define KEY_SPACE 49
 */
+
+#include "printf/ft_printf.h"
 
 # include <fcntl.h>
 # include <stdio.h>

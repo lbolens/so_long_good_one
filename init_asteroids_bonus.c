@@ -6,7 +6,7 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:19:10 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:19:52 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 16:08:59 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	reduce_function_bis(t_game *game, t_asteroid *curr,
 
 static void	reduce_function(t_game *game)
 {
-	printf("💥 Game Over: collision avec astéroïde\n");
+	ft_printf("Game Over: collision avec astéroïde\n");
 	destroy_game(game);
 	exit(1);
 }
