@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_quinter_bonus.c                              :+:      :+:    :+:   */
+/*   is_synthax_good.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 16:50:24 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:51 by lbolens          ###   ########.fr       */
+/*   Created: 2025/05/30 12:28:58 by lbolens           #+#    #+#             */
+/*   Updated: 2025/05/30 12:29:06 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long_bonus.h"
+#include "so_long.h"
 
-int	check_all_collectibles(char **map)
+int	check_synthax(char **map, int nbr_p, int nbr_c, int nbr_e)
 {
 	int	i;
 	int	j;
@@ -24,53 +24,20 @@ int	check_all_collectibles(char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[i][j] == 'C')
+			if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'P'
+				&& map[i][j] != 'C' && map[i][j] != 'E' && map[i][j] != '\n')
 				return (0);
+			if (map[i][j] == 'P')
+				nbr_p++;
+			else if (map[i][j] == 'C')
+				nbr_c++;
+			else if (map[i][j] == 'E')
+				nbr_e++;
 			j++;
 		}
 		i++;
 	}
+	if ((nbr_p != 1) || (nbr_c < 1) || (nbr_e < 1))
+		return (0);
 	return (1);
-}
-
-int	check_exit(char **map)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == 'E')
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-
-int	count_collectibles(char **map)
-{
-	int	i;
-	int	j;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == 'C')
-				count++;
-			j++;
-		}
-		i++;
-	}
-	return (count);
 }

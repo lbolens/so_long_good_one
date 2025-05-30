@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_rectangle_bonus.c                               :+:      :+:    :+:   */
+/*   utils_quater.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 12:28:42 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:03 by lbolens          ###   ########.fr       */
+/*   Created: 2025/05/27 16:08:57 by lbolens           #+#    #+#             */
+/*   Updated: 2025/05/30 14:16:23 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long_bonus.h"
+#include "so_long.h"
 
-int	is_rectangle(char **map)
+void	render_map(t_game *game, int i, int j)
 {
-	int	i;
+	char	**map;
 
-	i = 0;
-	while (map[i + 1])
-	{
-		if (number_columns(map[i]) != number_columns(map[i + 1]))
-			return (0);
-		i++;
-	}
-	return (1);
+	map = game->map.map;
+	doing_render(game, map, i, j);
 }

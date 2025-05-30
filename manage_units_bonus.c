@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   manage_units.c                                     :+:      :+:    :+:   */
+/*   manage_units_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:30:32 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 12:31:00 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 14:20:25 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static void	reduce_function(t_game *game, char *moves, int i, int j)
 {

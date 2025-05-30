@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:29:26 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:14 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 12:29:33 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 void	doing_it(t_game *game, int *width_px, int *heigth_px)
 {

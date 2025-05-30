@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flood_fill_bonus.c                                 :+:      :+:    :+:   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:17:46 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:19:34 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 12:27:42 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 static int	is_boundary_or_obstacle_no_exit(char **map, int x, int y,
 		int map_height)

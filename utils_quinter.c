@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_quinter_bonus.c                              :+:      :+:    :+:   */
+/*   utils_quinter.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 16:50:24 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:51 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/27 16:55:53 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 int	check_all_collectibles(char **map)
 {

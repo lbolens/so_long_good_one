@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movements_bonus.c                                  :+:      :+:    :+:   */
+/*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 11:53:40 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:29 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/27 15:31:34 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 static void	manage_keycode(t_game *game, int keycode, int *new_x, int *new_y)
 {

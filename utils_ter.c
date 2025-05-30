@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_ter_bonus.c                                  :+:      :+:    :+:   */
+/*   utils_ter.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 16:07:55 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:58 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/27 16:09:56 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 static char	*ft_putnbr(int n, char *s, int size, int *i)
 {

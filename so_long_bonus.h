@@ -6,7 +6,7 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 16:49:58 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:17:46 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 12:00:32 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,13 +170,33 @@ char					*ft_strjoin(char const *s1, char const *s2);
 size_t					ft_strlen_2(const char *str);
 
 int						game_loop(t_game *game);
+void					render_asteroids(t_game *game);
+void					init_seed_from_map(t_game *game);
+int						my_rand_mod(t_game *game, int mod);
+void					update_asteroids(t_game *game, t_asteroid *curr,
+							t_asteroid *prev);
+void					init_asteroid(t_game *game);
 int						exit_x(t_game *game);
 int						exit_y(t_game *game);
 
 void					doing_it(t_game *game, int *width_px, int *heigth_px);
+int						manage_victory_and_game_over(int keycode, t_game *game);
 
+void					manage_units_for_units(t_game *game, char *moves, int i,
+							int j);
+void					manage_hundreds_for_hundreds(t_game *game, char *moves,
+							int i, int j);
+void					manage_tens_for_hundreds(t_game *game, char *moves,
+							int i, int j);
+void					manage_units_for_hundreds(t_game *game, char *moves,
+							int i, int j);
+void					manage_tens_for_tens(t_game *game, char *moves, int i,
+							int j);
+void					manage_units_for_tens(t_game *game, char *moves, int i,
+							int j);
 void					doing_render(t_game *game, char **map, int i, int j);
 int						ft_size(int num);
+void					init_digit_images_bis(t_game *game);
 int						check_all_collectibles(char **map);
 int						check_exit(char **map);
 int						count_collectibles(char **map);

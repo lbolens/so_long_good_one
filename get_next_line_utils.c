@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:18:46 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:19:49 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 12:18:57 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 int	ft_strlen_str(const char *s)
 {

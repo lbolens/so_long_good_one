@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_synthax_good.c                                  :+:      :+:    :+:   */
+/*   is_synthax_good_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:28:58 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 12:29:06 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 14:20:07 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	check_synthax(char **map, int nbr_p, int nbr_c, int nbr_e)
 {

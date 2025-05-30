@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_quater.c                                     :+:      :+:    :+:   */
+/*   utils_quater_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 16:08:57 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 12:05:45 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 14:20:48 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	init_seed_from_map(t_game *game)
 {

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_sexies_bonus.c                               :+:      :+:    :+:   */
+/*   utils_sexies.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 11:55:22 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:55 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 12:05:55 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 char	*duplicate_line(char *line)
 {

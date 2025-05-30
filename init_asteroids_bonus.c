@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_asteroids.c                                   :+:      :+:    :+:   */
+/*   init_asteroids_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:19:10 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 12:28:06 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 14:19:52 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	render_asteroids(t_game *game)
 {

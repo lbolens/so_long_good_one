@@ -6,11 +6,12 @@
 #    By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/30 12:29:42 by lbolens           #+#    #+#              #
-#    Updated: 2025/05/30 14:02:12 by lbolens          ###   ########.fr        #
+#    Updated: 2025/05/30 14:24:09 by lbolens          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+NAME_BONUS = so_long_bonus
 
 SRC = game.c \
 	  get_next_line_utils.c \
@@ -26,10 +27,6 @@ SRC = game.c \
 	  render.c \
 	  utils.c \
 	  destroy.c \
-	  init_asteroids.c \
-	  manage_tens.c \
-	  manage_units.c \
-	  manage_hundreds.c \
 	  utils_bis.c \
 	  utils_ter.c \
 	  utils_quater.c \
@@ -117,7 +114,7 @@ bonus: $(OBJ_BONUS)
 	$(ASCII_ART)
 	@echo "🔧 Compiling BONUS version..."
 	@make -C mlx --no-print-directory > /dev/null 2>&1
-	@$(CC) $(CCFLAGS) $(OBJ_BONUS) $(MLX_FLAGS) -o $(NAME)
+	@$(CC) $(CCFLAGS) $(OBJ_BONUS) $(MLX_FLAGS) -o $(NAME_BONUS)
 	@echo "🎯 Build complete"
 	
 $(OBJ): %.o: %.c

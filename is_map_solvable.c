@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_map_solvable_bonus.c                            :+:      :+:    :+:   */
+/*   is_map_solvable.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:19:49 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:00 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 12:28:29 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "so_long.h"
 #include "mlx.h"
 
 static int	check_collectibles_path(char **map, int player_x, int player_y,

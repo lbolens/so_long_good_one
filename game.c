@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_bonus.c                                       :+:      :+:    :+:   */
+/*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:18:04 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 14:19:42 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/05/30 14:18:05 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "so_long_bonus.h"
+#include "so_long.h"
 
 void	init_game(t_game *game, char **map)
 {
@@ -33,18 +33,10 @@ void	init_game(t_game *game, char **map)
 		exit(1);
 	}
 	init_images(game);
-	init_seed_from_map(game);
 }
 
 int	game_loop(t_game *game)
 {
-	static int	frame = 0;
-
-	frame++;
-	if (frame % 300 == 0)
-		init_asteroid(game);
-	update_asteroids(game, NULL, NULL);
 	render_map(game, 0, 0);
-	render_asteroids(game);
 	return (0);
 }
