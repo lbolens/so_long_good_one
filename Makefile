@@ -6,7 +6,7 @@
 #    By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/30 12:29:42 by lbolens           #+#    #+#              #
-#    Updated: 2025/05/30 14:24:09 by lbolens          ###   ########.fr        #
+#    Updated: 2025/05/30 15:42:21 by lbolens          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRC = game.c \
 	  utils_quinter.c \
 	  flood_fill.c \
 	  utils_sexies.c
-
+	  
 SRC_BONUS = destroy_bonus.c \
 			init_images_bonus.c \
 			manage_hundreds_bonus.c \
@@ -58,7 +58,7 @@ SRC_BONUS = destroy_bonus.c \
 			main_bonus.c \
 			render_bonus.c \
 			utils_ter_bonus.c
-
+			
 define ASCII_ART
 	@echo ""
 	@echo "         /\    \                 /::\    \                 /\    \   /::\    \                 /\    \                  /\    \            "
