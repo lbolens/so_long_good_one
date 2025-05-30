@@ -6,7 +6,7 @@
 #    By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/30 12:29:42 by lbolens           #+#    #+#              #
-#    Updated: 2025/05/30 16:07:48 by lbolens          ###   ########.fr        #
+#    Updated: 2025/05/30 16:24:18 by lbolens          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -147,7 +147,7 @@ clean:
 
 fclean: clean
 	@make clean -C mlx > /dev/null
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(NAME_BONUS)
 	@echo "🧹 Fully cleaned project"
 
 re: fclean all
