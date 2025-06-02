@@ -6,7 +6,7 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:23:29 by lbolens           #+#    #+#             */
-/*   Updated: 2025/06/02 13:21:08 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/06/02 14:50:49 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	validate_map(char **map)
 	if (number_columns(map[0]) * TILE_SIZE > screen_width || number_lines(map)
 		* TILE_SIZE > screen_height)
 	{
-		ft_printf("Error: map exceeds screen size\n");
+		ft_printf("Error\nmap exceeds screen size\n");
 		return (0);
 	}
 	return (1);
@@ -52,7 +52,7 @@ static char	**load_map(int fd, int i)
 	if (i == 0)
 	{
 		free(map);
-		ft_printf("Error: Empty map\n");
+		ft_printf("Error\nEmpty map\n");
 		return (NULL);
 	}
 	map[i] = NULL;
@@ -68,7 +68,7 @@ char	**is_map_valid(char *filepath, int fd, int i)
 	fd = open(filepath, O_RDONLY);
 	if (fd < 0)
 	{
-		printf("Error: Cannot open file\n");
+		printf("Error\nCannot open file\n");
 		return (NULL);
 	}
 	map = load_map(fd, i);

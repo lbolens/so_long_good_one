@@ -6,7 +6,7 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 12:28:58 by lbolens           #+#    #+#             */
-/*   Updated: 2025/06/02 13:21:00 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/06/02 14:52:35 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	check_synthax(char **map, int nbr_p, int nbr_c, int nbr_e)
 		}
 		i++;
 	}
-	if ((nbr_p != 1) || (nbr_c < 1) || (nbr_e < 1))
+	if ((nbr_p != 1) || (nbr_c < 1) || (nbr_e != 1))
 		return (0);
 	return (1);
 }

@@ -6,12 +6,16 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 16:49:58 by lbolens           #+#    #+#             */
-/*   Updated: 2025/06/02 13:41:19 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/06/02 14:41:46 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+/* ************************************************************************** */
+/*                             DEFINES & MACROS                              */
+/* ************************************************************************** */
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
@@ -21,7 +25,7 @@
 #  define TILE_SIZE 128
 # endif
 
-/* Sur Linux*/
+// Touches (Linux) — décommenter la version Mac si besoin
 # define KEY_W 119
 # define KEY_A 97
 # define KEY_S 115
@@ -32,7 +36,7 @@
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 
-/*Sur Mac
+/*
 # define KEY_W     13
 # define KEY_A     0
 # define KEY_S     1
@@ -46,11 +50,19 @@
 # define KEY_SPACE 49
 */
 
+/* ************************************************************************** */
+/*                                 INCLUDES                                  */
+/* ************************************************************************** */
+
 # include "printf/ft_printf.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+/* ************************************************************************** */
+/*                                 STRUCTURES                                */
+/* ************************************************************************** */
 
 typedef struct s_node
 {
@@ -128,7 +140,10 @@ typedef struct s_game
 	t_asteroid			*asteroid;
 }						t_game;
 
-/*--------GET_NEXT_LINE--------*/
+/* ************************************************************************** */
+/*                             GET_NEXT_LINE                                 */
+/* ************************************************************************** */
+
 char					*get_next_line(int fd);
 int						check_newline(char *str);
 char					*ft_split_the_stash(t_nod *stash, int i, int j,
@@ -139,58 +154,82 @@ int						ft_strlen_str(const char *s);
 t_nod					*ft_create_new_stash(char *content, int index);
 t_nod					*add_to_stash(t_nod *stash, char *buffer);
 
-/*--------PARSING--------*/
-int						is_map_solvable(char **map, int player_x, int player_y,
-							int map_height);
+/* ************************************************************************** */
+/*                                PARSING                                    */
+/* ************************************************************************** */
+
+int						is_map_solvable(char **map, int x, int y, int height);
 int						is_rectangle(char **map);
-int						check_synthax(char **map, int nbr_p, int nbr_c,
-							int nbr_e);
-int						is_walls(char **map, int i, int nbr_lines,
-							int nbr_columns);
+int						check_synthax(char **map, int p, int c, int e);
+int						is_walls(char **map, int i, int lines, int cols);
 char					**is_map_valid(char *filepath, int fd, int i);
 
-/*--------DOING_IT--------*/
+/* ************************************************************************** */
+/*                            INITIALISATION                                 */
+/* ************************************************************************** */
+
 void					init_game(t_game *game, char **map);
 void					init_images(t_game *game);
-int						key_handler(int keycode, t_game *game);
-void					render_map(t_game *game, int i, int j);
 
-/*--------UTILS--------*/
+/* ************************************************************************** */
+/*                                RENDERING                                  */
+/* ************************************************************************** */
+
+void					render_map(t_game *game, int i, int j);
+void					doing_render(t_game *game, char **map, int i, int j);
+
+/* ************************************************************************** */
+/*                             GAME LOGIC                                    */
+/* ************************************************************************** */
+
+int						key_handler(int keycode, t_game *game);
+int						game_loop(t_game *game);
+void					doing_it(t_game *game, int *w_px, int *h_px);
+
+/* ************************************************************************** */
+/*                              UTILS                                        */
+/* ************************************************************************** */
+
 int						number_lines(char **map);
 int						number_columns(char *map);
 int						number_collectibles(char **map);
 int						check_file_synthax(char *str);
 int						close_game(t_game *game);
-void					free_map(char **map);
 void					destroy_game(t_game *game);
-void					find_player_position(char **map, int *player_x,
-							int *player_y);
+void					free_map(char **map);
+void					find_player_position(char **map, int *x, int *y);
+int						ft_size(int num);
+
+/* ************************************************************************** */
+/*                             STRING UTILS                                  */
+/* ************************************************************************** */
 
 char					*ft_itoa(int n);
 char					*ft_strjoin(char const *s1, char const *s2);
 size_t					ft_strlen_2(const char *str);
 
-int						game_loop(t_game *game);
-int						exit_x(t_game *game);
-int						exit_y(t_game *game);
+/* ************************************************************************** */
+/*                              MAP UTILS                                    */
+/* ************************************************************************** */
 
-void					doing_it(t_game *game, int *width_px, int *heigth_px);
-
-void					doing_render(t_game *game, char **map, int i, int j);
-int						ft_size(int num);
+char					**map_duplicate(char **map, int i, int lines);
+char					*duplicate_line(char *line);
+void					free_partial_map(char **map, int up_to);
 int						check_all_collectibles(char **map);
 int						check_exit(char **map);
 int						count_collectibles(char **map);
-
-char					*duplicate_line(char *line);
-void					free_partial_map(char **map, int up_to_index);
-char					**map_duplicate(char **map, int i, int nbr_lines);
 int						is_boundary_or_obstacle(char **map, int x, int y,
-							int map_height);
+							int height);
 int						is_valid_cell(char c);
 
-void					flood_fill(char **map, int x, int y, int map_height);
+/* ************************************************************************** */
+/*                             FLOOD FILL                                    */
+/* ************************************************************************** */
+
+void					flood_fill(char **map, int x, int y, int height);
 void					flood_fill_no_exit(char **map, int x, int y,
-							int map_height);
+							int height);
+
+/* ************************************************************************** */
 
 #endif
