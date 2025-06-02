@@ -6,7 +6,7 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 16:49:58 by lbolens           #+#    #+#             */
-/*   Updated: 2025/05/30 16:00:33 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/06/02 13:41:19 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@
 # define KEY_SPACE 49
 */
 
-#include "printf/ft_printf.h"
-
+# include "printf/ft_printf.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -183,13 +182,15 @@ int						check_all_collectibles(char **map);
 int						check_exit(char **map);
 int						count_collectibles(char **map);
 
-char *duplicate_line(char *line);
-void free_partial_map(char **map, int up_to_index);
-char **map_duplicate(char **map, int i, int nbr_lines);
-int is_boundary_or_obstacle(char **map, int x, int y, int map_height);
-int is_valid_cell(char c);
+char					*duplicate_line(char *line);
+void					free_partial_map(char **map, int up_to_index);
+char					**map_duplicate(char **map, int i, int nbr_lines);
+int						is_boundary_or_obstacle(char **map, int x, int y,
+							int map_height);
+int						is_valid_cell(char c);
 
-void flood_fill(char **map, int x, int y, int map_height);
-void flood_fill_no_exit(char **map, int x, int y, int map_height);
+void					flood_fill(char **map, int x, int y, int map_height);
+void					flood_fill_no_exit(char **map, int x, int y,
+							int map_height);
 
 #endif

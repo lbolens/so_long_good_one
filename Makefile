@@ -6,7 +6,7 @@
 #    By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/30 12:29:42 by lbolens           #+#    #+#              #
-#    Updated: 2025/05/30 16:24:18 by lbolens          ###   ########.fr        #
+#    Updated: 2025/06/02 13:54:46 by lbolens          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,52 +23,53 @@ FT_PRINTF = \
 	printf/ft_putnbr_printf.c \
 	printf/ft_putstr_printf.c
 
-SRC = game.c \
-	  get_next_line_utils.c \
-	  get_next_line.c \
-	  init_images.c \
-	  is_map_solvable.c \
-	  is_rectangle.c \
-	  is_synthax_good.c \
-	  is_walls.c \
-	  main.c \
-	  movements.c \
-	  parsing.c \
-	  render.c \
-	  utils.c \
-	  destroy.c \
-	  utils_bis.c \
-	  utils_ter.c \
-	  utils_quater.c \
-	  utils_quinter.c \
-	  flood_fill.c \
-	  utils_sexies.c \
+SRC = game/game.c \
+	  gnl/get_next_line_utils.c \
+	  gnl/get_next_line.c \
+	  game/init_images.c \
+	  parsing/is_map_solvable.c \
+	  parsing/is_rectangle.c \
+	  parsing/is_synthax_good.c \
+	  parsing/is_walls.c \
+	  game/main.c \
+	  game/movements.c \
+	  parsing/parsing.c \
+	  game/render.c \
+	  utils/utils.c \
+	  game/destroy.c \
+	  utils/utils_bis.c \
+	  utils/utils_ter.c \
+	  utils/utils_quater.c \
+	  utils/utils_quinter.c \
+	  game/flood_fill.c \
+	  utils/utils_sexies.c \
 	  $(FT_PRINTF)
 	  
-SRC_BONUS = destroy_bonus.c \
-			init_images_bonus.c \
-			manage_hundreds_bonus.c \
-			utils_bis_bonus.c \
-			flood_fill_bonus.c \
-			is_map_solvable_bonus.c \
-			manage_tens_bonus.c \
-			utils_bonus.c \
-			game_bonus.c \
-			is_rectangle_bonus.c \
-			manage_units_bonus.c \
-			utils_quater_bonus.c \
-			get_next_line_bonus.c \
-			is_synthax_good_bonus.c \
-			movements_bonus.c \
-			utils_quinter_bonus.c \
-			get_next_line_utils_bonus.c \
-			is_walls_bonus.c \
-			parsing_bonus.c \
-			utils_sexies_bonus.c \
-			init_asteroids_bonus.c \
-			main_bonus.c \
-			render_bonus.c \
-			utils_ter_bonus.c \
+SRC_BONUS = bonus/game/destroy_bonus.c \
+			bonus/game/init_images_bonus.c \
+			bonus/game/manage_hundreds_bonus.c \
+			bonus/utils/utils_bis_bonus.c \
+			bonus/game/flood_fill_bonus.c \
+			bonus/parsing/is_map_solvable_bonus.c \
+			bonus/game/manage_tens_bonus.c \
+			bonus/utils/utils_bonus.c \
+			bonus/game/game_bonus.c \
+			bonus/parsing/is_rectangle_bonus.c \
+			bonus/game/manage_units_bonus.c \
+			bonus/utils/utils_quater_bonus.c \
+			bonus/gnl/get_next_line_bonus.c \
+			bonus/parsing/is_synthax_good_bonus.c \
+			bonus/game/movements_bonus.c \
+			bonus/utils/utils_quinter_bonus.c \
+			bonus/gnl/get_next_line_utils_bonus.c \
+			bonus/parsing/is_walls_bonus.c \
+			bonus/parsing/parsing_bonus.c \
+			bonus/utils/utils_sexies_bonus.c \
+			bonus/game/init_asteroids_bonus.c \
+			bonus/game/main_bonus.c \
+			bonus/game/render_bonus.c \
+			bonus/utils/utils_ter_bonus.c \
+			bonus/game/check_images.c \
 			$(FT_PRINTF)
 			
 define ASCII_ART
