@@ -6,12 +6,19 @@
 /*   By: lbolens <lbolens@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 11:53:40 by lbolens           #+#    #+#             */
-/*   Updated: 2025/06/02 13:20:31 by lbolens          ###   ########.fr       */
+/*   Updated: 2025/06/02 15:20:42 by lbolens          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
 #include "../so_long.h"
+#include "mlx.h"
+
+static int	is_valid_movement_key(int keycode)
+{
+	return (keycode == KEY_W || keycode == KEY_UP || keycode == KEY_S
+		|| keycode == KEY_DOWN || keycode == KEY_A || keycode == KEY_LEFT
+		|| keycode == KEY_D || keycode == KEY_RIGHT);
+}
 
 static void	manage_keycode(t_game *game, int keycode, int *new_x, int *new_y)
 {
@@ -68,6 +75,8 @@ int	key_handler(int keycode, t_game *game)
 	int		new_y;
 
 	if (!game || !game->map.map)
+		return (0);
+	if (!is_valid_movement_key(keycode) && keycode != KEY_ESC)
 		return (0);
 	map = game->map.map;
 	new_x = game->player.x;
